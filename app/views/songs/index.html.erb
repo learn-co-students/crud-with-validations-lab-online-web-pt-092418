@@ -1,15 +1,28 @@
+<div id="all-songs"></div>
+<div><%= link_to 'Create Song', new_song_path %></div>
 <table>
-  <div id="all-songs">
-    <% @songs.each do |song| %>
-    <ul>
-      <p><%= song.title %></p>
-      <% link_to "edit", edit_song_path(@song) %>
-      <% link_to "destroy", destroy_song_path(@song) %>
-      <p><%= song.artist_name %></p>
-      <p><%= song.released %></p>
-      <p><%= song.released_year %></p>
-      <p><%= song.genre %></p>
-      <% end %>
-    </ul>
-  </div>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Year</th>
+      <th>Genre</th>
+      <th>Artist Name</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+      <% @songs.each do |song| %>
+      <tr>
+        <td><%= song.title %></td>
+        <td><%= song.artist_name %></td>
+        <td><%= song.released %></td>
+        <td><%= song.release_year %></td>
+        <td><%= song.genre %></td>
+        <td><%= link_to "edit", edit_song_path(song) %></td>
+      </tr>
+        <% end %>
+
+  </tbody>
 </table>
