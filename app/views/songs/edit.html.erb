@@ -1,3 +1,5 @@
-<h1>Edit <%= @song.title %>
+<h1>Edit <%= @song.title %></h1>
 
-<%= render 'form' %>
+<%= render 'errors', song: @song %>
+
+<%= render 'form', song: @song %>
